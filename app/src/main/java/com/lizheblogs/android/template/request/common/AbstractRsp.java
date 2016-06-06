@@ -18,6 +18,8 @@ package com.lizheblogs.android.template.request.common;
 
 import android.content.Context;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 import com.lizheblogs.android.template.R;
 
 import java.io.Serializable;
@@ -27,6 +29,8 @@ public class AbstractRsp implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    @Expose
+    @SerializedName("summary")
     private HttpRsp summary = new HttpRsp();
 
     public AbstractRsp() {

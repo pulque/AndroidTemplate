@@ -57,9 +57,9 @@ public class EmailSender extends javax.mail.Authenticator {
         props.setProperty("mail.transport.protocol", "smtp");
         props.setProperty("mail.host", mailhost);
         props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.port", "25");
-        props.put("mail.smtp.socketFactory.port", "25");
-//        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        props.put("mail.smtp.port", "465");
+        props.put("mail.smtp.socketFactory.port", "465");
+        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         props.put("mail.smtp.socketFactory.fallback", "false");
         props.setProperty("mail.smtp.quitwait", "false");
         session = Session.getDefaultInstance(props, this);

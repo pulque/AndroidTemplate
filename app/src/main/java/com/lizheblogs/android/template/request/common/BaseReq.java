@@ -25,13 +25,5 @@ public class BaseReq extends AbstractReq {
         super();
     }
 
-    @Override
-    public void setUri(String uri) {
-        super.setUri(uri);
-    }
-
-    public String getUri() {
-        return super.getUri();
-    }
 
 }

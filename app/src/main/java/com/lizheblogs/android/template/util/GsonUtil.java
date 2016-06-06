@@ -30,10 +30,10 @@ public final class GsonUtil {
         if (gson == null) {
             gson = new GsonBuilder()
                     .excludeFieldsWithoutExposeAnnotation()
-                    .enableComplexMapKeySerialization()
-                    .serializeNulls()
-                    .setPrettyPrinting()
-                    .setVersion(1.0)
+//                    .enableComplexMapKeySerialization()
+//                    .serializeNulls()
+//                    .setPrettyPrinting()
+//                    .setVersion(1.0)
                     .create();
         }
     }

@@ -2,19 +2,19 @@ package com.lizheblogs.android.template.module.main;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.lizheblogs.android.template.R;
+import com.lizheblogs.android.template.module.common.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.google.gson.internal.$Gson$Preconditions.checkNotNull;
 
-public class MainActivity extends AppCompatActivity implements MainContract.View {
+public class MainActivity extends BaseActivity {
 
     private MainContract.Presenter presenter;
     private TextView title;
@@ -32,8 +32,14 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         list = (ListView) findViewById(R.id.list);
         mListAdapter = new ListAdapter(new ArrayList<String>());
         list.setAdapter(mListAdapter);
-        int i = 0;
-        i = 1/i;
+
+        setPresenter(new MainPresenter(this));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        presenter.start();
     }
 
     @Override

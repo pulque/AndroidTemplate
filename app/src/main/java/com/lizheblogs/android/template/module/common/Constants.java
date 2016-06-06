@@ -23,6 +23,11 @@ package com.lizheblogs.android.template.module.common;
 public class Constants {
 
     /**
+     * server URL
+     */
+    public static final String SERVER_URL = "http://lizheblogs.com/demo/AndroidTemplate/";
+
+    /**
      * network error code
      */
     public static final int NO_NETWORK_400 = 400;

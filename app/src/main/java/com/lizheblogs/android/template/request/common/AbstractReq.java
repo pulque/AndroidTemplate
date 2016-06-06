@@ -16,15 +16,12 @@
 
 package com.lizheblogs.android.template.request.common;
 
-import com.google.gson.annotations.Expose;
-
 import java.io.Serializable;
 
 public abstract class AbstractReq implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @Expose
     private String uri;
 
     public String getUri() {

@@ -80,8 +80,10 @@ public class ListAdapter extends BaseAdapter {
                 .load(images.get(position))
                 .placeholder(R.mipmap.ic_launcher)
                 .error(R.mipmap.ic_launcher)
+                .fit()
+                .centerCrop()
                 .into(holder.imageIV);
-        return null;
+        return convertView;
     }
 
     class Holder {

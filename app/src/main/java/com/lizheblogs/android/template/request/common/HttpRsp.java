@@ -17,6 +17,7 @@
 package com.lizheblogs.android.template.request.common;
 
 import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
@@ -24,16 +25,21 @@ public class HttpRsp implements Serializable {
     /**
      * status code
      */
+    @Expose
+    @SerializedName("status")
     private int status;
 
     /**
      * return content
      */
     @Expose
+    @SerializedName("message")
     private String message;
     /**
      * return date
      */
+    @Expose
+    @SerializedName("date")
     private String date;
 
     /**

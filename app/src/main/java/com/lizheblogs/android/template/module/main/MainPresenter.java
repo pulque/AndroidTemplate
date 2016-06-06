@@ -18,6 +18,16 @@ package com.lizheblogs.android.template.module.main;
 
 import android.support.annotation.NonNull;
 
+import com.lizheblogs.android.template.R;
+import com.lizheblogs.android.template.request.RequestHelper;
+import com.lizheblogs.android.template.request.RequestInterface;
+import com.lizheblogs.android.template.request.common.HttpRsp;
+import com.lizheblogs.android.template.request.users.UserListRsp;
+import com.lizheblogs.android.template.util.GsonUtil;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.google.gson.internal.$Gson$Preconditions.checkNotNull;
 
 /**
@@ -35,7 +45,7 @@ public class MainPresenter implements MainContract.Presenter {
 
     @Override
     public void updateData() {
-
+        initData();
     }
 
     @Override
@@ -45,6 +55,37 @@ public class MainPresenter implements MainContract.Presenter {
 
     @Override
     public void start() {
+        initData();
+    }
 
+    private void initData() {
+        mActivity.showTitle("Test");
+        mActivity.showDescription("Test Description");
+        RequestHelper.getInstance().UserList(mActivity, new RequestInterface.CallBack() {
+            @Override
+            public void onSuccess(String mEntity) {
+                if (mActivity.isFinishing()) {
+                    return;
+                }
+                UserListRsp rsp = GsonUtil.jsonToObject(mEntity, UserListRsp.class);
+                if (rsp == null) {
+                    mActivity.showToast(R.string.generic_error);
+                } else if (rsp.isError()) {
+                    mActivity.showToast(rsp.getMessage(mActivity));
+                } else {
+                    List<String> mStrings = new ArrayList<String>();
+                    List<UserListRsp.UsersEntity> mUsersEntities = rsp.getUsers();
+                    for (UserListRsp.UsersEntity mUsersEntity : mUsersEntities) {
+                        mStrings.add(mUsersEntity.getProfilePicture());
+                    }
+                    mActivity.notifyList(mStrings);
+                }
+            }
+
+            @Override
+            public void onFailure(HttpRsp httpRsp) {
+                mActivity.showToast(httpRsp.getMessage());
+            }
+        });
     }
 }
