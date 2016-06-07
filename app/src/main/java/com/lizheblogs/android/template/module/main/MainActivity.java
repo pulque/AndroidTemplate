@@ -1,7 +1,6 @@
 package com.lizheblogs.android.template.module.main;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -70,7 +69,7 @@ public class MainActivity extends BaseActivity {
     }
 
     @Override
-    public void setPresenter(@NonNull MainContract.Presenter presenter) {
+    public void setPresenter(MainContract.Presenter presenter) {
         this.presenter = checkNotNull(presenter);
     }
 }

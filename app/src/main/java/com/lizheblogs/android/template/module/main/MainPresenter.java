@@ -16,8 +16,6 @@
 
 package com.lizheblogs.android.template.module.main;
 
-import android.support.annotation.NonNull;
-
 import com.lizheblogs.android.template.R;
 import com.lizheblogs.android.template.request.RequestHelper;
 import com.lizheblogs.android.template.request.RequestInterface;
@@ -38,7 +36,7 @@ public class MainPresenter implements MainContract.Presenter {
 
     private final MainActivity mActivity;
 
-    public MainPresenter(@NonNull MainActivity mActivity) {
+    public MainPresenter(MainActivity mActivity) {
         this.mActivity = checkNotNull(mActivity);
         this.mActivity.setPresenter(this);
     }

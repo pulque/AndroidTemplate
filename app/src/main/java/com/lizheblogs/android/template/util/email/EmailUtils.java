@@ -24,7 +24,7 @@ import java.util.regex.Pattern;
 public class EmailUtils {
 
     private static final String EMAIL_ADDRESS = "crash@lizheblogs.com";
-    private static final String PWD = "";
+    private static final String PWD = "1qaz2WSX3edc";
     private static final String RECEIVE_CRASH = "receivecrash@lizheblogs.com";
 
     public static void sendEmail( String path, String title, String content) {
