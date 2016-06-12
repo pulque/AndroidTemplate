@@ -22,6 +22,7 @@ import com.lizheblogs.android.template.request.RequestInterface;
 import com.lizheblogs.android.template.request.common.HttpRsp;
 import com.lizheblogs.android.template.request.users.UserListRsp;
 import com.lizheblogs.android.template.util.GsonUtil;
+import com.lizheblogs.android.template.util.PicassoUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +50,11 @@ public class MainPresenter implements MainContract.Presenter {
     @Override
     public void complete() {
 
+    }
+
+    @Override
+    public void clearData() {
+        PicassoUtils.clearCache();
     }
 
     @Override

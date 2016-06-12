@@ -39,15 +39,15 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
 public class EmailSender extends javax.mail.Authenticator {
+    static {
+        Security.addProvider(new JSSEProvider());
+    }
+
     private String mailhost = "smtp.lizheblogs.com";
     private String user;
     private String password;
     private Session session;
     private Multipart _multipart;
-
-    static {
-        Security.addProvider(new JSSEProvider());
-    }
 
     public EmailSender(String user, String password) {
         this.user = user;

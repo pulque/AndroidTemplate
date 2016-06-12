@@ -1,3 +1,19 @@
+/*
+ * Copyright 2016 Li Zhe <pulqueli@gmail.com>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.lizheblogs.android.template.module.main;
 
 import android.os.Bundle;
@@ -19,7 +35,7 @@ public class MainActivity extends BaseActivity {
     private TextView title;
     private TextView description;
     private ListView list;
-    private ListAdapter mListAdapter;
+    private MainListAdapter mListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +45,7 @@ public class MainActivity extends BaseActivity {
         title = (TextView) findViewById(R.id.title);
         description = (TextView) findViewById(R.id.description);
         list = (ListView) findViewById(R.id.list);
-        mListAdapter = new ListAdapter(new ArrayList<String>());
+        mListAdapter = new MainListAdapter(new ArrayList<String>());
         list.setAdapter(mListAdapter);
 
         setPresenter(new MainPresenter(this));
@@ -71,5 +87,11 @@ public class MainActivity extends BaseActivity {
     @Override
     public void setPresenter(MainContract.Presenter presenter) {
         this.presenter = checkNotNull(presenter);
+    }
+
+    @Override
+    protected void onDestroy() {
+
+        super.onDestroy();
     }
 }

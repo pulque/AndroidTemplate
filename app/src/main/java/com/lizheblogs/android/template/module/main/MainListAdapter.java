@@ -16,12 +16,15 @@
 
 package com.lizheblogs.android.template.module.main;
 
+import android.graphics.Bitmap;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
 import com.lizheblogs.android.template.R;
+import com.lizheblogs.android.template.module.common.Constants;
 import com.lizheblogs.android.template.util.PicassoUtils;
 
 import java.util.List;
@@ -33,11 +36,12 @@ import static com.google.gson.internal.$Gson$Preconditions.checkNotNull;
  * ListAdapter
  * Created by Norman.Li on 6/2/2016.
  */
-public class ListAdapter extends BaseAdapter {
+public class MainListAdapter extends BaseAdapter {
 
     private List<String> images;
 
-    public ListAdapter(List<String> images) {
+    public MainListAdapter(List<String> images) {
+
         setList(images);
     }
 
@@ -69,9 +73,10 @@ public class ListAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         Holder holder = null;
         if (convertView == null) {
+            LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+            convertView = inflater.inflate(R.layout.activity_main_list_item, parent, false);
             holder = new Holder();
-            holder.imageIV = new ImageView(parent.getContext());
-            convertView = holder.imageIV;
+            holder.imageIV = (ImageView) convertView.findViewById(R.id.imageIV);
             convertView.setTag(holder);
         } else {
             holder = (Holder) convertView.getTag();
@@ -80,8 +85,8 @@ public class ListAdapter extends BaseAdapter {
                 .load(images.get(position))
                 .placeholder(R.mipmap.ic_launcher)
                 .error(R.mipmap.ic_launcher)
-                .fit()
-                .centerCrop()
+                .resize(Constants.SCREEN_WIDTH, 0)
+                .config(Bitmap.Config.RGB_565)
                 .into(holder.imageIV);
         return convertView;
     }

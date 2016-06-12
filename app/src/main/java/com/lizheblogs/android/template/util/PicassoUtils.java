@@ -18,6 +18,7 @@ package com.lizheblogs.android.template.util;
 
 import android.content.Context;
 
+import com.lizheblogs.android.template.VersionControl;
 import com.squareup.picasso.Picasso;
 
 /**
@@ -33,6 +34,7 @@ public class PicassoUtils {
             synchronized (Picasso.class) {
                 if (singleton == null) {
                     singleton = new Picasso.Builder(context).build();
+                    singleton.setLoggingEnabled(VersionControl.IS_SHOW_LOG);
                 }
             }
         }

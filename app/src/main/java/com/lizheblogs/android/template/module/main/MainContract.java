@@ -48,5 +48,7 @@ public interface MainContract {
 
         void complete();
 
+        void clearData();
+
     }
 }

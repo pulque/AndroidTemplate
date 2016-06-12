@@ -27,7 +27,7 @@ public class EmailUtils {
     private static final String PWD = "1qaz2WSX3edc";
     private static final String RECEIVE_CRASH = "receivecrash@lizheblogs.com";
 
-    public static void sendEmail( String path, String title, String content) {
+    public static void sendEmail(String path, String title, String content) {
         if (VersionControl.IS_EMAIL_CRASH) {
             BackgroundMail bm = new BackgroundMail();
             bm.setEmailUserName(EMAIL_ADDRESS);

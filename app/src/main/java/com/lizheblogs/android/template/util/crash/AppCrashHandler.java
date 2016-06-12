@@ -51,11 +51,10 @@ import java.util.Map;
 public class AppCrashHandler implements UncaughtExceptionHandler {
 
     public static final String TAG = "CrashHandler";
-
-    //Handle UncaughtException class
-    private UncaughtExceptionHandler mDefaultHandler;
     //CrashHandler
     private static AppCrashHandler INSTANCE = new AppCrashHandler();
+    //Handle UncaughtException class
+    private UncaughtExceptionHandler mDefaultHandler;
     //Context
     private Context mContext;
     //store info

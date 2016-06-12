@@ -32,12 +32,21 @@ import com.lizheblogs.android.template.util.crash.AppCrashHandler;
  */
 public class SubApplication extends Application {
 
+    private static final String REQUEST_QUEUE_TAG = "SubApplication";
     private static SubApplication application;
     /**
      * Global request queue for Volley
      */
     private RequestQueue mRequestQueue;
-    private static final String REQUEST_QUEUE_TAG = "SubApplication";
+
+    /**
+     * Gets Application object
+     *
+     * @return
+     */
+    public static synchronized SubApplication getInstance() {
+        return application;
+    }
 
     @Override
     public void onCreate() {
@@ -48,15 +57,6 @@ public class SubApplication extends Application {
         DisplayMetrics displayMetrics = getResources().getDisplayMetrics();
         Constants.SCREEN_WIDTH = displayMetrics.widthPixels;
         Constants.SCREEN_HEIGHT = displayMetrics.heightPixels;
-    }
-
-    /**
-     * Gets Application object
-     *
-     * @return
-     */
-    public static synchronized SubApplication getInstance() {
-        return application;
     }
 
     /**
