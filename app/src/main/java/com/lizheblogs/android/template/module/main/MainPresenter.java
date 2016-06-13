@@ -17,10 +17,10 @@
 package com.lizheblogs.android.template.module.main;
 
 import com.lizheblogs.android.template.R;
-import com.lizheblogs.android.template.request.RequestHelper;
-import com.lizheblogs.android.template.request.RequestInterface;
-import com.lizheblogs.android.template.request.common.HttpRsp;
-import com.lizheblogs.android.template.request.users.UserListRsp;
+import com.lizheblogs.android.template.data.remote.RequestHelper;
+import com.lizheblogs.android.template.data.remote.RequestInterface;
+import com.lizheblogs.android.template.data.remote.common.HttpRsp;
+import com.lizheblogs.android.template.data.remote.users.UserListRsp;
 import com.lizheblogs.android.template.util.GsonUtil;
 import com.lizheblogs.android.template.util.PicassoUtils;
 

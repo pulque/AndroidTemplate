@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.lizheblogs.android.template.data;
+package com.lizheblogs.android.template.data.shared;
 
 import android.content.Context;
 import android.content.SharedPreferences;

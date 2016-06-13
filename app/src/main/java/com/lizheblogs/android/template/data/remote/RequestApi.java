@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.lizheblogs.android.template.request;
+package com.lizheblogs.android.template.data.remote;
 
 import android.content.Context;
 import android.text.TextUtils;
@@ -28,8 +28,8 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.lizheblogs.android.template.R;
 import com.lizheblogs.android.template.module.common.Constants;
 import com.lizheblogs.android.template.module.common.SubApplication;
-import com.lizheblogs.android.template.request.common.AbstractReq;
-import com.lizheblogs.android.template.request.common.HttpRsp;
+import com.lizheblogs.android.template.data.remote.common.AbstractReq;
+import com.lizheblogs.android.template.data.remote.common.HttpRsp;
 import com.lizheblogs.android.template.util.GsonUtil;
 import com.lizheblogs.android.template.util.SubLog;
 

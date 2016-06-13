@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.lizheblogs.android.template.request.common;
+package com.lizheblogs.android.template.data.remote.common;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

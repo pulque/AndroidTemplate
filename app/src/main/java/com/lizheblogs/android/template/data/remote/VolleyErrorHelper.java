@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.lizheblogs.android.template.request;
+package com.lizheblogs.android.template.data.remote;
 
 import android.content.Context;
 import android.text.TextUtils;

@@ -14,22 +14,35 @@
  * limitations under the License.
  */
 
-package com.lizheblogs.android.template.request.common;
+package com.lizheblogs.android.template.data.remote;
 
-import java.io.Serializable;
 
-public abstract class AbstractReq implements Serializable {
+import com.lizheblogs.android.template.data.remote.common.HttpRsp;
 
-    private static final long serialVersionUID = 1L;
+/**
+ * Created by Norman.Li on 6/3/2016.
+ * CallBack
+ */
+public interface RequestInterface {
 
-    private String uri;
+    interface CallBack {
 
-    public String getUri() {
-        return uri;
+        void onSuccess(String mEntity);
+
+        void onFailure(HttpRsp httpRsp);
+
     }
 
-    public void setUri(String uri) {
-        this.uri = uri;
+    interface Success {
+
+        void onSuccess(String mEntity);
+
+    }
+
+    interface Failure {
+
+        void onFailure(HttpRsp httpRsp);
+
     }
 
 }

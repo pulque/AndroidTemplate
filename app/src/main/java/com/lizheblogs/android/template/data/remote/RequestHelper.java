@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.lizheblogs.android.template.request;
+package com.lizheblogs.android.template.data.remote;
 
 import android.content.Context;
 
 import com.android.volley.Request;
 import com.lizheblogs.android.template.module.common.Constants;
-import com.lizheblogs.android.template.request.common.BaseReq;
+import com.lizheblogs.android.template.data.remote.common.BaseReq;
 
 /**
  * RequestHelper

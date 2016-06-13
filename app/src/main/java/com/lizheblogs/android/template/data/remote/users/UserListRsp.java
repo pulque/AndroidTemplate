@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.lizheblogs.android.template.request.users;
+package com.lizheblogs.android.template.data.remote.users;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
-import com.lizheblogs.android.template.request.common.AbstractRsp;
+import com.lizheblogs.android.template.data.remote.common.AbstractRsp;
 
 import java.util.List;
 
